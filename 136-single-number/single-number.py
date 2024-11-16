@@ -4,14 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        k = {}
-        
+        result = 0
         for num in nums:
-            if num in k:
-                k[num] += 1
-            else:
-                k[num] = 1
-
-        for key in k:
-            if k[key] == 1:
-                return key
+            result ^= num
+        return result
